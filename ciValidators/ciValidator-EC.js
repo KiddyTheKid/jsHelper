@@ -10,6 +10,8 @@
  * 
  */
 
+console.log('- Validator Added');
+
 const checkCI = (c) => {
     if (c.value.length == 10 || c.value.length == 13){
         let cedula, prov, tercer, decimo;

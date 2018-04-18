@@ -7,6 +7,8 @@
  *  
  */
 
+console.log('- Checkers Added');
+
 const emptyTarget = (tar) => {
     return typeof tar == typeof undefined || tar === false; 
 };

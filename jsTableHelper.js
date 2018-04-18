@@ -18,6 +18,9 @@
  * @param {intenger} col recibe del DOM HTML la eleccion que se haya hecho con el value. 
  * 
  */
+
+console.log('- TableHelper Added');
+
 const searchInTable = (c) => {
     let filtro, tr, td, i, col;
     col = $(c).attr('table-col');

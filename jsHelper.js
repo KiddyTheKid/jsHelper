@@ -1,3 +1,8 @@
+/**
+ * CONCENTRADOR DE DEPENDENCIAS
+ */
+console.log('Core Active');
+
 let cScripts = document.getElementsByTagName('script');
 cScripts = [...cScripts];
 let ruta;

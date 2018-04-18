@@ -9,6 +9,8 @@
  * un formulario por medio de serializeArray
  */
 
+console.log('- Translator Added');
+
 const arrayToJson = (arreglo) => {
     let fin = arreglo.length - 1;
     let jsonString = '{';

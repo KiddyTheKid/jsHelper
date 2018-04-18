@@ -10,6 +10,8 @@
  *   
  */
 
+console.log('- Messages Added');
+
 const showWarning = (texto) => {
     const Message = '<div class="alert alert-warning" role="alert">' + texto + '</div>';
     return Message;
