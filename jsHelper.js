@@ -1,5 +1,5 @@
 let jsFiles = [
-    'ciValidator-EC.js', 
+    'ciValidators/ciValidator-EC.js', 
     'jsCheckers.js', 
     'jsMessages.js', 
     'jsTableHelper.js', 
