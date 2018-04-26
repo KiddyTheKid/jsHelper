@@ -4,8 +4,7 @@ Ayudante javascript para paginas HTML
 
 * Puede realizar busquedas en tablas cargadas.
 * Mensajes de alerta Bootstrap
-* Validador de cedula 
-..* Cedula Ecuatoria
+* Validador de cedula: Cedula Ecuatoria
 * Revision de campos (En desarrollo)
 * Receptor y emisor de json
 
