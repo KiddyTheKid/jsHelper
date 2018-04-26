@@ -29,3 +29,11 @@ Esto es ubicado de preferencia en un DOM Select, recibe el numero de la opcion s
 | Atributos    | Function                                |
 |:------------ |:--------------------------------------- |
 | input-target | Id del input al que se aplica el cambio |
+
+```html
+<input type="text" id="filtro" table-col="0" onkeyup="searchInTable(this)">
+<select onchange="changeTableSearchCol(this)">
+    <option value="1">Columna 2</option>
+    <option value="2">Columna 3</option>
+</select>
+```
