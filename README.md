@@ -1,6 +1,7 @@
 # jsHelper
 
 Ayudante javascript para paginas HTML
+Depende de jQuery
 
 * Puede realizar busquedas en tablas cargadas.
 * Mensajes de alerta Bootstrap
@@ -14,7 +15,9 @@ Ayudante javascript para paginas HTML
 
 Realiza una busqueda sobre una tabla HTML
 
-| Propiedades  | Funcion                                           |
-| ------------ |:------------------------------------------------- |
-| table-target | Es la tabla en la que se realizara la busqueda    |
-| table-col    | Es la columna sobre la cual realizara la busqueda |
+| Propiedades  | Funcion                                                    |
+| ------------ |:---------------------------------------------------------- |
+| table-target | Es el ID de la tabla en la que se realizara la busqueda    |
+| table-col    | Es la columna sobre la cual realizara la busqueda          |
+
+> El numero de las columenas comienza desde 0
