@@ -32,7 +32,7 @@ Esto es ubicado de preferencia en un DOM Select, recibe el numero de la opcion s
 
 ```html
 <input type="text" id="filtro" table-col="0" onkeyup="searchInTable(this)">
-<select onchange="changeTableSearchCol(this)">
+<select onchange="changeTableSearchCol(this)" input-target="filtro">
     <option value="1">Columna 2</option>
     <option value="2">Columna 3</option>
 </select>
