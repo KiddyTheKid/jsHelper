@@ -30,6 +30,8 @@ Esto es ubicado de preferencia en un DOM Select, recibe el numero de la opcion s
 |:------------ |:--------------------------------------- |
 | input-target | Id del input al que se aplica el cambio |
 
+Codigo de ejemplo
+
 ```html
 <input type="text" id="filtro" table-col="0" onkeyup="searchInTable(this)">
 <select onchange="changeTableSearchCol(this)" input-target="filtro">
