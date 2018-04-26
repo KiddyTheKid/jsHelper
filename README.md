@@ -16,8 +16,16 @@ Depende de jQuery
 Realiza una busqueda sobre una tabla HTML, se inserta los siguientes atributos al DOM que obtiene los datos de la busqueda.
 
 | Atributos    | Funcion                                                    |
-| ------------ |:---------------------------------------------------------- |
+|:------------ |:---------------------------------------------------------- |
 | table-target | Es el ID de la tabla en la que se realizara la busqueda    |
 | table-col    | Es la columna sobre la cual realizara la busqueda          |
 
 > El numero de las columnas comienza desde 0
+
+## changeTableSearchCol(this)
+
+Esto es ubicado de preferencia en un DOM Select, recibe el numero de la opcion seleccionada y en base a eso realiza un cambio en el atributo `table-col` asignando la nueva columna sobre la que se realizara la busqueda.
+
+| Atributos    | Function                                |
+|:------------ |:--------------------------------------- |
+| input-target | Id del input al que se aplica el cambio |
