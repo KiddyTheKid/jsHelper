@@ -24,4 +24,5 @@ const showSuccess = (texto) => {
 
 const showError = (texto) => {
     const Message = '<div class="alert alert-danger" role="alert">' + texto + '</div>';
+    return Message;
 };
