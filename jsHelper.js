@@ -15,10 +15,10 @@ cScripts.map((script, i) => {
 
 let jsFiles = [
     'ciValidators/ciValidator-EC.js', 
-    'jsCheckers.js', 
-    'jsMessages.js', 
-    'jsTableHelper.js', 
-    'jsTranslatorAPI.js'
+    'domManager/jsCheckers.js', 
+    'domManager/jsMessages.js', 
+    'domManager/jsTableHelper.js', 
+    'responseManager/jsTranslatorAPI.js'
 ];
 jsFiles.map((file, i) => {
     let imported = document.createElement('script');
