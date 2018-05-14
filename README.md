@@ -39,3 +39,9 @@ Codigo de ejemplo
     <option value="2">Columna 3</option>
 </select>
 ```
+
+## checkCI
+
+Realizar una validacion del numero de cedula ingresado, puede verificar RUC.
+
+
