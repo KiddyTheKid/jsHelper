@@ -13,7 +13,7 @@ const goToPage = (c) => {
     let getVars = window.location.search.slice(1).split('&');
     let accion = $(c).attr('pg-action');
     let getVarName = $(c).attr('pg-var');
-    let pagina = 0;
+    let pagina = 1;
     let hrefString = '?';
     getVars.map((valor, indice) => {
         let nData = valor.split('=');
@@ -29,7 +29,7 @@ const goToPage = (c) => {
             hrefString += getVarName + '=' + pagina;
             break;
         case '-':
-            pagina = (pagina > 0) ? pagina - 1 : 0;
+            pagina = (pagina > 1) ? pagina - 1 : 1;
             hrefString += getVarName + '=' + pagina;
             break;
     }

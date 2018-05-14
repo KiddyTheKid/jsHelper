@@ -1,3 +1,6 @@
+### v1.1.1
+* Correcion de paginacion e inicios
+
 ### v1.1.0
 * Se agrega un modulo para hacer peticiones ajax.
 * Se agrega funcion para Alertar si un dato de un DATALIST ha sido seleccionado.
