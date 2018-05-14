@@ -17,7 +17,8 @@ let jsFiles = [
     'ciValidators/ciValidator-EC.js', 
     'domManager/jsCheckers.js', 
     'domManager/jsMessages.js', 
-    'domManager/jsTableHelper.js', 
+    'domManager/jsTableHelper.js',
+    'domManager/jsPaginator.js',
     'responseManager/jsTranslatorAPI.js'
 ];
 jsFiles.map((file, i) => {
