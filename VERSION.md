@@ -1,3 +1,6 @@
+### v1.2.0
+* Se agrego funcion mostrar un loader
+
 ### v1.1.1
 * Correcion de paginacion e inicios
 

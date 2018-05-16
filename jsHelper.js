@@ -19,6 +19,7 @@ let jsFiles = [
     'domManager/jsMessages.js', 
     'domManager/jsTableHelper.js',
     'domManager/jsPaginator.js',
+    'domManager/jsLoader.js',
     'responseManager/jsTranslatorAPI.js'
 ];
 jsFiles.map((file, i) => {
