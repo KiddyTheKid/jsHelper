@@ -1,28 +1,31 @@
+console.log('- Translator Added');
 /**
- * @function arrayToJson convierte un javascriptArray a JSON object
- * @param {Array} arreglo recibe el arreglo Javascript obtenido 
- * de un Formulario por medio de serializeArray
+ * @function arrayToJson
+ * Convierte un Array a un objeto del tipo JSON
+ * @param {Array} arrayData Arreglo Javascript 
+ * @returns {JSON} Objeto Json
  * 
- * @function arrayToJson convierte un javascriptArray a JSON String
- * util para realizar post
- * @param {Array} arreglo recibe el arreglo javascript obtenido de
- * un formulario por medio de serializeArray
+ * @function arrayToJsonString
+ * Convierte un arreglo en un String Json
+ * @param {Array} arrayData Arreglo de Javascript
+ * @returns {String} Texto de formato JSONs
  */
 
-console.log('- Translator Added');
-
-const arrayToJson = (arreglo) => {
-    let fin = arreglo.length - 1;
-    let jsonString = '{';
-    arreglo.map((val, i) => {
-        jsonString += '"' + val.name + '":"' + val.value + '"';
-        if (i != fin){ jsonString += ', '; }
-    });
-    jsonString += '}';
-    return JSON.parse(jsonString);
-};
-
-const arrayToJsonString = (arreglo) => {
-    let jsonObject = arrayToJson(arreglo);
-    return JSON.stringify(jsonObject);
-};
+const jsTranslator = {
+    arrayToJson: function (arrayData){
+        var endOfArray = arrayData.length - 1;
+        var jsonString = '{';
+        arrayData.forEach(function(data, i){
+            jsonString += `"${data.name}":"${data.value}"`;
+            if (i != endOfArray){
+                jsonString += ",";
+            }
+        });
+        jsonString += '}';
+        return JSON.parse(jsonString);
+    },
+    arrayToJsonString: function (arrayData){
+        var jsonObject = arrayToJson(arrayData);
+        return JSON.stringify(jsonObject);
+    }
+}

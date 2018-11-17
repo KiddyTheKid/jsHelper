@@ -11,18 +11,17 @@
  */
 
 console.log('- Messages Added');
-
-const showWarning = (texto) => {
-    const Message = '<div class="alert alert-warning" role="alert">' + texto + '</div>';
-    return Message;
-};
-
-const showSuccess = (texto) => {
-    const Message = '<div class="alert alert-success" role="alert">' + texto + '</div>';
-    return Message;
-};
-
-const showError = (texto) => {
-    const Message = '<div class="alert alert-danger" role="alert">' + texto + '</div>';
-    return Message;
-};
+const jsMessages = {
+    showWarning: function(texto){
+        const Message = `<div class="alert alert-warning" role="alert">${texto}</div>`;
+        return Message;
+    },
+    showSuccess: function(texto){
+        const Message = `<div class="alert alert-success" role="alert">${texto}</div>`;
+        return Message;
+    },
+    showError: function(texto){
+        const Message = `<div class="alert alert-danger" role="alert">${texto}</div>`;
+        return Message;
+    }
+}

@@ -1,37 +1,35 @@
-/**
- * MODO DE USO
- * @function goToPage incrementa o disminuye un valor get de paginas
- * @param {DOM} c DOM que tiene la informacion necesaria
- * @param {String} accion Toma de pg-action la accion que realizara "+" para sumar "-" para restart
- * @param {String} getVarName Es el nombre de la variable get que se creara con el numero de pagina a tomar.
- *  
- */
-
 console.log('- Paginator Added');
 
-const goToPage = (c) => {
-    let getVars = window.location.search.slice(1).split('&');
-    let accion = $(c).attr('pg-action');
-    let getVarName = $(c).attr('pg-var');
-    let pagina = 1;
-    let hrefString = '?';
-    getVars.map((valor, indice) => {
-        let nData = valor.split('=');
-        if (nData[0] === getVarName){
-            pagina = parseInt(nData[1]);
-        } else {
-            hrefString += valor + '&';
+/**
+ * @function goToPage
+ * Add pagination using a get var 
+ * Required attributes:
+ *  pg-action: +/- to go back of forward
+ *  pg-var: Name of the variable
+ * @param {DOM} c DOM elemento that performs the action
+ */
+const jsPaginator = {
+    goToPage: function(c){
+        let getVars = window.location.search.slice(1).split('&');
+        let accion = c.getAttribute('pg-action');
+        let getVarName = c.getAttribute('pg-var');
+        let pagina = 1;
+        let hrefString = '?';
+        getVars.forEach(function(valor){
+            var nData = valor.split('=');
+            if (nData[0] === getVarName) {
+                pagina = parseInt(nData[1]);
+            } else {
+                hrefString +=`${valor}&`;
+            }
+        });
+        if (accion == "+") {
+            pagina++;
         }
-    });
-    switch (accion){
-        case '+':
-            pagina += 1;
-            hrefString += getVarName + '=' + pagina;
-            break;
-        case '-':
-            pagina = (pagina > 1) ? pagina - 1 : 1;
-            hrefString += getVarName + '=' + pagina;
-            break;
+        if (accion == "-") {
+            pagina = pagina > 1 ? pagina -1 : 1;
+        }
+        hrefString += `${getVarName}=${pagina}`;
+        window.location.href = hrefString;
     }
-    window.location.href = hrefString;
-};
+}

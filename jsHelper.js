@@ -2,19 +2,18 @@
  * CONCENTRADOR DE DEPENDENCIAS
  */
 console.log('Core Active');
+var cScripts, rutaScript;
 
-let cScripts = document.getElementsByTagName('script');
-cScripts = [...cScripts];
-let ruta;
-cScripts.map((script, i) => {
-    if(script.src.indexOf('jsHelper') > -1){
-        let filename = script.src.substr(script.src.lastIndexOf('/') +1);
-        ruta = script.src.replace(filename, '');
+cScripts = document.getElementsByTagName('script');
+Array.from(cScripts).forEach(function(script){
+    if (script.src.indexOf('jsHelper') > -1) {
+        var fileName = script.src.substr(script.src.lastIndexOf('/') + 1);
+        rutaScript = script.src.replace(fileName, '');
     }
 });
 
-let jsFiles = [
-    'ciValidators/ciValidator-EC.js', 
+const jsFiles = [
+    'ciValidators/ciValidator.js', 
     'domManager/jsCheckers.js', 
     'domManager/jsMessages.js', 
     'domManager/jsTableHelper.js',
@@ -22,8 +21,9 @@ let jsFiles = [
     'domManager/jsLoader.js',
     'responseManager/jsTranslatorAPI.js'
 ];
-jsFiles.map((file, i) => {
-    let imported = document.createElement('script');
-    imported.src = ruta + file;
-    document.head.appendChild(imported);
-});
+
+jsFiles.forEach(function(scriptLocation){
+    var scriptTag = document.createElement('script');
+    scriptTag.src = rutaScript + scriptLocation;
+    document.head.appendChild(scriptTag);
+})
