@@ -19,16 +19,30 @@ console.log('- TableHelper Added');
  * @param {DOM} c DOM with proper settings 
  */
 const jsTableHelper = {
+    setInputText: function (idInputText){
+        var inputText = document.getElementById(idInputText);
+        var f = this.searchInTable;
+        inputText.addEventListener('keyup', function(){
+            f(this);
+        });
+    }, 
+    setSelectInput: function(idSelectInput) {
+        var selectInput = document.getElementById(idSelectInput);
+        var f = this.changeTableSearchCol;
+        selectInput.addEventListener('change', function(){
+            f(this);
+        });
+    },
     searchInTable: function (c){
         var filtro, tableRows, tableData, tableTarget, col;
         col = c.getAttribute('table-col');
-        if (emptyTarget(col)){ 
+        if (jsCheckers.emptyTarget(col)){ 
             console.warn('No se ha declarado table-col: default es 0');
             col = 0;
         }
         filtro = c.value.toUpperCase();
         tableTarget = c.getAttribute('table-target');
-        if (emptyTarget(tableTarget)){ 
+        if (jsCheckers.emptyTarget(tableTarget)){ 
             console.error('No hay table-target'); 
             return; 
         }
@@ -36,17 +50,15 @@ const jsTableHelper = {
         tableRows = document.getElementById(tableTarget).getElementsByTagName('tr');
         Array.from(tableRows).forEach(function(tableRow){
             tableData = tableRow.getElementsByTagName('td')[col];
-            if (!tableData) {
-                console.error("Error al obtener Table data");
-                return;
+            if (tableData) {
+                tableRow.style = tableData.innerHTML.toUpperCase().indexOf(filtro) >= 0 ? '' : 'display: none';
             }
-            tableRow.style = tableData.innerHTML.toUpperCase().indexOf(filtro) > -1 ? '' : 'none';
         });
     },
     changeTableSearchCol: function(c){
         var input, col, iTarget;
         iTarget = c.getAttribute('input-target');
-        if (emptyTarget(iTarget)) { 
+        if (jsCheckers.emptyTarget(iTarget)) { 
             console.error('No input-target found'); 
             return; 
         }

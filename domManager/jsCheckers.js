@@ -13,7 +13,7 @@
 console.log('- Checkers Added');
 const jsCheckers = {
     emptyTarget: function(tar){
-        return typeof tar == typeof undefined || tar === false;
+        return typeof tar == typeof undefined || tar === false || tar == null;
     },
     listItemSelected: function(c) {
         let inputVal = c.value;

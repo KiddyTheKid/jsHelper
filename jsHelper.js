@@ -26,4 +26,9 @@ jsFiles.forEach(function(scriptLocation){
     var scriptTag = document.createElement('script');
     scriptTag.src = rutaScript + scriptLocation;
     document.head.appendChild(scriptTag);
-})
+});
+
+var jsStyle = document.createElement('link');
+jsStyle.ref = "";
+jsStyle.href = `${rutaScript}Styles/jshelper-style-file.css`;
+document.head.appendChild(jsStyle);
