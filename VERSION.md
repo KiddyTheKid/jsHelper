@@ -1,3 +1,6 @@
+### v1.2.1
+* Se corrige un error de referencia a la funcion de mensajes.
+
 ### v1.2.0
 * Se agrego funcion mostrar un loader
 
