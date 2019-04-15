@@ -22,12 +22,12 @@ const ciValidator = {
                 prov = cedula.slice(0, 2);
                 if (prov > 24 && prov < 0){
                     document.getElementById($(c).attr('button-target')).setAttribute('disabled', true);
-                    document.getElementById($(c).attr('alert-container')).innerHTML = showWarning('Numero de cedula incorrecto');
+                    document.getElementById($(c).attr('alert-container')).innerHTML = jsMessages.showWarning('Numero de cedula incorrecto');
                 }
                 tercer = cedula[2];
                 if (tercer > 5){
                     document.getElementById($(c).attr('button-target')).setAttribute('disabled', true);
-                    document.getElementById($(c).attr('alert-container')).innerHTML = showWarning('Numero de cedula incorrecto');
+                    document.getElementById($(c).attr('alert-container')).innerHTML = jsMessages.showWarning('Numero de cedula incorrecto');
                 }
                 decimo = cedula[9];
                 let cArray = [...cedula].slice(0, 9);
@@ -44,7 +44,7 @@ const ciValidator = {
                 }
                 if (sum != decimo) {
                     document.getElementById($(c).attr('button-target')).setAttribute('disabled', true);
-                    document.getElementById($(c).attr('alert-container')).innerHTML = showWarning('Numero de cedula incorrecto');
+                    document.getElementById($(c).attr('alert-container')).innerHTML = jsMessages.showWarning('Numero de cedula incorrecto');
                 } else {
                     document.getElementById($(c).attr('button-target')).disabled = false;
                     document.getElementById($(c).attr('alert-container')).innerHTML = '';
@@ -54,4 +54,4 @@ const ciValidator = {
             }
         }
     }
-}
+};
