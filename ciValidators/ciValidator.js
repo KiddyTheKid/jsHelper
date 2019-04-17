@@ -15,6 +15,12 @@ const ciValidator = {
     checkCI: {
         EC: function(c) {
             if (c.value.length == 10 || c.value.length == 13){
+                if (c.value.length == 13) {
+                    //Debido al ruc de empresa en registro mercantil
+                    document.getElementById($(c).attr('button-target')).disabled = false;
+                    document.getElementById($(c).attr('alert-container')).innerHTML = '';
+                    return;
+                }
                 let cedula, prov, tercer, decimo;
                 let coef = [2, 1, 2, 1, 2, 1, 2, 1, 2];
                 let sum = 0;
