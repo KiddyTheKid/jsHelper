@@ -1,3 +1,6 @@
+### v1.2.2
+* Se corrige la verificacion de los RUC registrados en el mercantil.
+
 ### v1.2.1
 * Se corrige un error de referencia a la funcion de mensajes.
 
